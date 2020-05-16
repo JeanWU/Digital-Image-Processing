@@ -1,0 +1,38 @@
+# DIP Homework Assignment #1  
+# Month Day, Year : Mar 10, 2019
+# Name: Jean Wu
+# ID #: R06944023 
+# email: r06944023@csie.ntu.edu.tw  
+# compiled on Ubuntu 16.04 with g++ -std=c++11
+# please executed by "make –f README"
+
+
+CC=g++ -std=c++11
+LN=g++
+ALL: Warmup Prob1 Prob2
+Warmup:
+	@echo "Warmup"
+	@echo "compiling and linking the code"
+	$(CC) -c warmup.cpp
+	$(LN) -o warmup warmup.o
+	@echo "running the program, usage: ./warmup sample1 B"
+	./warmup raw/sample1.raw B.raw
+
+Prob1:
+	@echo "Prob1"
+	@echo "compiling and linking the code"
+	$(CC) -c p1.cpp
+	$(LN) -o p1 p1.o
+	@echo "running, usage: ./p1 sample2 D E Hd He Ld Le"
+	./p1 raw/sample2.raw D.raw E.raw Hd.raw He.raw Ld.raw Le.raw
+
+Prob2:
+	@echo "Prob2"
+	@echo "comiling and linking the code"
+	$(CC) -c p2.cpp
+	$(LN) -o p2 p2.o
+	@echo "running, usage: ./p2 sample3 sample4 sample5 N1 N2"
+	./p2 raw/sample3.raw raw/sample4.raw raw/sample5.raw N1.raw N2.raw
+
+clean:
+	rm -f *.o *.raw *.data warmup p1 p2

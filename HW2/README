@@ -1,0 +1,30 @@
+# DIP Homework Assignment #2  
+# Month Day, Year : Mar 26, 2019
+# Name: Jean Wu
+# ID #: R06944023 
+# email: r06944023@csie.ntu.edu.tw  
+# compiled on Ubuntu 16.04 with g++ -std=c++11
+# please executed by "make –f README"
+
+
+CC=g++ -std=c++11
+LN=g++
+ALL: Prob1 Prob2
+Prob1:
+	@echo "Prob1"
+	@echo "compiling and linking the code"
+	$(CC) -c p1.cpp
+	$(LN) -o p1 p1.o
+	@echo "running, usage: ./p1 sample1 sample1E1 sample1E2 sample1E3 sample2 sample2E1 sample2E2 sample2E3 sample3 sample3E1 sample3E2 sample3E3"
+	./p1 raw/sample1.raw sample1E1.raw sample1E2.raw sample1E3.raw raw/sample2.raw sample2E1.raw sample2E2.raw sample2E3.raw raw/sample3.raw sample3E1.raw sample3E2.raw sample3E3.raw
+
+Prob2:
+	@echo "Prob2"
+	@echo "comiling and linking the code"
+	$(CC) -c p2.cpp
+	$(LN) -o p2 p2.o
+	@echo "running, usage: ./p2 sample4 C D"
+	./p2 raw/sample4.raw C.raw D.raw
+
+clean:
+	rm -f *.o *.raw *.data p1 p2

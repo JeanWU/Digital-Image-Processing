@@ -1,0 +1,22 @@
+# DIP Homework Assignment #4  
+# Month Day, Year : May 13, 2019
+# Name: Jean Wu
+# ID #: R06944023 
+# email: r06944023@csie.ntu.edu.tw  
+# compiled on Ubuntu 16.04 with g++ -std=c++11
+# please executed by "make –f README"
+
+
+CC=g++ -std=c++11
+LN=g++
+ALL: Prob1
+Prob1:
+	@echo "Prob1"
+	@echo "compiling and linking the code"
+	$(CC) -c p1.cpp
+	$(LN) -o p1 p1.o
+	@echo "running, usage: ./p1 sample1"
+	./p1 raw/sample1.raw
+
+clean:
+	rm -f *.o *.raw *.data p1
